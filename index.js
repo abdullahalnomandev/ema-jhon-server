@@ -20,6 +20,11 @@ client.connect(err => {
   const collection = client.db("emaJhonSimple").collection("products");
   const ordersCollection = client.db("emaJhonSimple").collection("orders");
 
+  app.get('/',(req,res)=>{
+
+    res.send("Hellow Bangladesh it's working")
+  })
+
   app.post('/adProducts',(req,res)=>{
         const products=req.body;
         collection.insertOne(products)
